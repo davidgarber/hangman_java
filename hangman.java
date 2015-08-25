@@ -2,7 +2,11 @@ public class Hangman {
 
   public static void main(String[] args) {
 
-      Game game = new Game("treehouse");
+      if (args.length == 0) {
+        System.out.println("Please enter a word");
+        System.exit(0);
+      }
+      Game game = new Game(args[0]);
       Prompter prompter = new Prompter(game);
       prompter.play();
       // testing code
