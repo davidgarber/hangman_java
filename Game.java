@@ -1,4 +1,5 @@
 public class Game {
+  public static final int MAX_MISSES = 7;
   private String mAnswer;
   private String mHits;
   private String mMisses;
@@ -28,5 +29,9 @@ public class Game {
       progress += display;
     }
     return progress;
+  }
+
+  public int getRemainingTries() {
+    return MAX_MISSES - mMisses.length();
   }
 }
